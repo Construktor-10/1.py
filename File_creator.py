@@ -19,7 +19,7 @@ def File_creator():
             audio_for_file_creator = r.listen(source_for_file_creator)
 
         speech_for_file_creator = r.recognize_google(audio_for_file_creator, language="ru_RU")
-        print("Вы сказали "  speech_for_file_creator)
+        print("Вы сказали " + speech_for_file_creator)
 
         
         if speech_for_file_creator.find("директория") >= 0:

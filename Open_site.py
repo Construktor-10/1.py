@@ -6,7 +6,7 @@ import webbrowser
 r = sr.Recognizer()
 voice = pyttsx3.init()
 
-def Open_site():
+def callable():
     Open_site_on = "true"
     while Open_site_on == "true":
 
@@ -17,8 +17,8 @@ def Open_site():
             print("Выберете сайт")
             audio_for_Open_site = r.listen(source_for_Open_site)
 
-        speech_for_Open_site = r.recognize_google(audio_for_Open_site, language="ru_RU")
-        print("Вы сказали "  speech_for_Open_site)
+        speech = r.recognize_google(audio_for_Open_site, language="ru_RU")
+        print("Вы сказали " + speech)
 
         
         if speech.find("youtube") >= 0 or speech.find("YouTube") >= 0:

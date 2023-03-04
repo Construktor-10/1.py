@@ -19,7 +19,7 @@ def Open():
             audio_for_Open = r.listen(source_for_Open)
 
         speech_for_Open = r.recognize_google(audio_for_Open, language="ru_RU")
-        print("Вы сказали "  speech_for_Open)
+        print("Вы сказали " + speech_for_Open)
 
         
         #if speech_for_Open.find("приложение") >= 0:

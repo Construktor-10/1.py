@@ -16,12 +16,12 @@ def File_creator_txt():
                 audio_for_file_creator_txt_creator = r.listen(source_for_file_creator_txt_name_chose)
 
         speech_for_file_creator_txt_creator = r.recognize_google(audio_for_file_creator_txt_creator, language="ru_RU")
-        print("Вы сказали "  speech_for_file_creator_txt_creator)
+        print("Вы сказали " + speech_for_file_creator_txt_creator)
 
         name = speech_for_file_creator_txt_creator
         try:
             os.mkdir(name)
-            voice.say("Тестовый фаил с именем "  name  " создан")
+            voice.say("Тестовый фаил с именем " + name + " создан")
             file_creator_txt_creator = "off"
         except FileExistsError:
             voice.say("Фаил уже существует, создать не возможно")
