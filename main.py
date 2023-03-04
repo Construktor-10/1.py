@@ -2,8 +2,8 @@ import speech_recognition as sr
 import pyttsx3
 import random
 from datetime import datetime
-import File_creator
-import Open
+import File_creator as File_creator
+import Open as Open
 
 
 r = sr.Recognizer()
@@ -30,10 +30,10 @@ while True:
     #Поиск команд
 
     elif speech.find("открой") >= 0:
-        Open()
+        Open
         
     elif speech.find("создай") >= 0:
-        File_creator()
+        File_creator
 
     elif speech.find("дата") >= 0:
             today = datetime.today()
