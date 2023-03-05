@@ -2,8 +2,9 @@ import speech_recognition as sr
 import pyttsx3
 import random
 from datetime import datetime
-import File_creator as File_creator
-import Open as Open
+import File_creator
+import Open
+import Help
 
 
 r = sr.Recognizer()
@@ -30,10 +31,12 @@ while True:
     #Поиск команд
 
     elif speech.find("открой") >= 0:
-        Open
+        Open.Open_start()
+        voice.runAndWait()
         
     elif speech.find("создай") >= 0:
-        File_creator
+        File_creator.File_creator_start()
+        voice.runAndWait()
 
     elif speech.find("дата") >= 0:
             today = datetime.today()
@@ -42,11 +45,7 @@ while True:
             voice.runAndWait()
 
     elif speech.find("помощь") >= 0:
-            voice.say("Имеются команды")
-            voice.say("дата для определения даты") 
-            voice.say("создай для создания папки")  
-            voice.say("открой для открытия ютуба")   
-            voice.say("и пока для закрытия программы")    
+            Help.Help_start()   
             voice.runAndWait()
 
     elif speech.find("пока") >= 0:
