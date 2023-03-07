@@ -37,6 +37,12 @@ while True:
     elif speech.find("создай") >= 0:
         File_creator.File_creator_start()
         voice.runAndWait()
+        
+    elif speech.find("праздник") >= 0 or speech.find("празник") >= 0:
+
+        voice.say("Поздравляю Юлию Липскую с восьмым марта. - - И праздником всех женщин.")
+
+        voice.runAndWait()
 
     elif speech.find("дата") >= 0:
             today = datetime.today()
