@@ -1,3 +1,4 @@
+print("Загруска начата.")
 import speech_recognition as sr
 import pyttsx3
 import random
@@ -5,6 +6,7 @@ from datetime import datetime
 import File_creator
 import Open
 import Help
+print("Загруска закончена.")
 
 
 r = sr.Recognizer()
@@ -18,6 +20,8 @@ list_hi = ["Привет" , "Hello" , "Приветики" , "здравству
 
 while True:
     with sr.Microphone(device_index=0) as source: 
+        voice.say("Вы в главном меню")
+        voice.runAndWait()
         print("Скажи что-нибуть...")
         audio = r.listen(source)
 
@@ -37,12 +41,16 @@ while True:
     elif speech.find("создай") >= 0:
         File_creator.File_creator_start()
         voice.runAndWait()
+        
 
     elif speech.find("дата") >= 0:
             today = datetime.today()
             today = today.strftime('%d/%m/%Y')
             voice.say(today)
             voice.runAndWait()
+            if today == "08/03/2023":
+                 voice.say("Также поздравляю ва с восьмым марта - праздником всех женщин.")
+                 voice.runAndWait()
 
     elif speech.find("помощь") >= 0:
             Help.Help_start()   
@@ -52,6 +60,7 @@ while True:
         voice.say("До встречи")
         voice.runAndWait()
         break
+
     #Если ничего не нащёл
     else:
         voice.say("Я вас не понимаю")
