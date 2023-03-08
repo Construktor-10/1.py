@@ -39,9 +39,7 @@ while True:
         voice.runAndWait()
         
     elif speech.find("праздник") >= 0 or speech.find("празник") >= 0:
-
         voice.say("Поздравляю Юлию Липскую с восьмым марта. - - И праздником всех женщин.")
-
         voice.runAndWait()
 
     elif speech.find("дата") >= 0:
@@ -49,6 +47,9 @@ while True:
             today = today.strftime('%d/%m/%Y')
             voice.say(today)
             voice.runAndWait()
+            if today == "08/03/2023":
+                 voice.say("Также поздравляю ва с восьмым марта - праздником всех женщин.")
+                 voice.runAndWait()
 
     elif speech.find("помощь") >= 0:
             Help.Help_start()   
@@ -58,6 +59,7 @@ while True:
         voice.say("До встречи")
         voice.runAndWait()
         break
+
     #Если ничего не нащёл
     else:
         voice.say("Я вас не понимаю")
